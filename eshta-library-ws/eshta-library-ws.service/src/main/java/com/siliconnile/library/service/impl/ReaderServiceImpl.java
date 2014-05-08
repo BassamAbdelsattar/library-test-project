@@ -13,9 +13,8 @@ public class ReaderServiceImpl implements ReaderServiceApi {
 	ReaderDao readerDao;
 
 	@Override
-	public Reader addOrEditReader(Reader reader){
+	public Reader addOrEditReader(Reader reader) {
 
-		
 		try {
 			return readerDao.saveOrUpdate(reader);
 		} catch (Exception e) {
@@ -37,5 +36,9 @@ public class ReaderServiceImpl implements ReaderServiceApi {
 		return readerDao.findById(id);
 
 	}
+
+	
+
+	
 
 }

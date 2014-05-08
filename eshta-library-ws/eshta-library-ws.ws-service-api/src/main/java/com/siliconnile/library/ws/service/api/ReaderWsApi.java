@@ -15,7 +15,7 @@ public interface ReaderWsApi {
 	@Path("/AddOrEditeReader")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Reader AddOrEditeReader( @QueryParam("name") String reader_name) throws Exception ;
+	public Reader AddOrEditeReader( @QueryParam("name") String reader_name,@QueryParam("id")long id) throws Exception ;
 	
 	
 	@GET
