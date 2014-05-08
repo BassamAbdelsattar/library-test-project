@@ -1,18 +1,25 @@
 package com.siliconnile.library.ws.service.api;
 
-import java.util.Date;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 import com.siliconnile.library.domain.Reader;
+
 @Path("/")
 public interface ReaderWsApi {
-	@Path(" /AddOrEditeReader")
-	@GET
-	public Reader AddOrEditeReader( @QueryParam(value = "name") String name,  @QueryParam(value = "registrationDate")Date registrationDate) throws Exception;
 
-	public Reader DeletReaderByID(@QueryParam(value="id") long id);
+	
+	@Path("/AddOrEditeReader")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Reader AddOrEditeReader( @QueryParam("name") String reader_name) throws Exception ;
+	
+	
+	@GET
+	@Path("/DeletReaderByID")
+	public void DeletReaderByID(@QueryParam("id") long id) throws Exception;
 
 }

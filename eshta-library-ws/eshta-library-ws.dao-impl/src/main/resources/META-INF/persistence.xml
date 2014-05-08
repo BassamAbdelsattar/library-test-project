@@ -12,7 +12,7 @@
 
         <properties>
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
-            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.show_sql" value="true" />
 
             <property name="hibernate.query.factory_class" value="org.hibernate.hql.ast.ASTQueryTranslatorFactory"/>
         </properties>

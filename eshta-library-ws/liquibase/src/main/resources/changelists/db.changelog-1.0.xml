@@ -11,23 +11,54 @@
 
 	<changeSet id="2" author="bassam">
 		<createTable tableName="reader">
-
-			<column name="name" type="VARCHAR(50)">
-			</column>
+			 <column name="name" type="VARCHAR(256)"/>
 			<column name="registration_date" type="timestamp"></column>
 		</createTable>
 
 	</changeSet>
+	
+	
 	<changeSet author="bassam" id="3">
-	<addColumn tableName="reader" >
-	
-	<column name="id" type="long" autoIncrement="true">
-	
-	<constraints primaryKey="true"/>
-	
-	</column>
-	
-	</addColumn>
+		<addColumn tableName="reader">
+
+			<column name="id" type="BIGINT" autoIncrement="true">
+
+				<constraints primaryKey="true" />
+
+			</column>
+
+		</addColumn>
 	</changeSet>
+	<changeSet author="bassam" id="4">
+		<createTable tableName="book">
+			<column name="id" type="BIGINT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="title" type="VARCHAR(50)"></column>
+			<column name="auther" type="VARCHAR(50)"></column>
+			<column name="ISBN" type="VARCHAR(50)"></column>
+			<column name="Cover_image_url" type="VARCHAR(50)"></column>
+		</createTable>
+	</changeSet>
+	<changeSet author="bassam" id="5">
+		<createTable tableName="book_reader">
+
+			<column name="id" type="BIGINT">
+				<constraints primaryKey="true" />
+
+			</column>
+			<column name="reader_id" type="BIGINT">
+				<constraints foreignKeyName="reader_id_fk" references="reader(id)" />
+			</column>
+			<column name="book_id" type="BIGINT">
+				<constraints foreignKeyName="book_id_fk" references="book(id)" />
+
+
+			</column>
+
+		</createTable>
+
+	</changeSet>
+
 
 </databaseChangeLog>
