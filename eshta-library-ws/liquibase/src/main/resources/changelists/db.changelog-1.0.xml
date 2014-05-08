@@ -3,33 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
-	<!-- <changeSet id="1" author="AndrewKharchenko"> <createTable tableName="sample" 
-		schemaName="public"> <column name="id" type="BIGINT" autoIncrement="true"> 
-		<constraints nullable="false" /> </column> <column name="name" type="VARCHAR(256)" 
-		/> </createTable> </changeSet> -->
-
-
-	<changeSet id="2" author="bassam">
-		<createTable tableName="reader">
-			 <column name="name" type="VARCHAR(256)"/>
-			<column name="registration_date" type="timestamp"></column>
-		</createTable>
-
-	</changeSet>
 	
-	
-	<changeSet author="bassam" id="3">
-		<addColumn tableName="reader">
 
-			<column name="id" type="BIGINT" autoIncrement="true">
 
-				<constraints primaryKey="true" />
-
-			</column>
-
-		</addColumn>
-	</changeSet>
-	<changeSet author="bassam" id="4">
+	<changeSet author="bassam" id="2">
 		<createTable tableName="book">
 			<column name="id" type="BIGINT">
 				<constraints primaryKey="true" />
@@ -40,7 +17,18 @@
 			<column name="Cover_image_url" type="VARCHAR(50)"></column>
 		</createTable>
 	</changeSet>
-	<changeSet author="bassam" id="5">
+
+	<changeSet id="3" author="Bassam">
+		<createTable tableName="reader" schemaName="public">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(256)" />
+			<column name="registration_date" type="timestamp" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="bassam" id="4">
 		<createTable tableName="book_reader">
 
 			<column name="id" type="BIGINT">
@@ -59,6 +47,8 @@
 		</createTable>
 
 	</changeSet>
+
+
 
 
 </databaseChangeLog>

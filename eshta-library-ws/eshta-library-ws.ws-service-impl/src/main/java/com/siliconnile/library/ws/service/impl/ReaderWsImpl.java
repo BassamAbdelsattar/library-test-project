@@ -13,16 +13,12 @@ public class ReaderWsImpl implements ReaderWsApi {
 	ReaderServiceApi readerService;
 
 	@Override
-	public Reader AddOrEditeReader(String name) throws Exception
-			 {
+	public Reader AddOrEditeReader(String name) throws Exception {
 		Reader reader = new Reader();
-		
-
-		reader.setReaderName(name);
+       reader.setReaderName(name);
 		reader.setRegistrationDate(new Date());
-		
-			return readerService.addOrEditReader(reader);
-		
+
+		return readerService.addOrEditReader(reader);
 
 	}
 
