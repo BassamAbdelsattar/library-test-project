@@ -10,6 +10,8 @@ public interface ReaderServiceApi {
 
 	public Reader findReaderByUsingId(long id) throws Exception;
 
+	public Reader UpdateReaderById(Reader reader) throws Exception;
+
 	
 
 }

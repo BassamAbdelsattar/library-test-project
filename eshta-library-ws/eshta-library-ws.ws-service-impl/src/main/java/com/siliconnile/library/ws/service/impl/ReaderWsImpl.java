@@ -25,10 +25,24 @@ public class ReaderWsImpl implements ReaderWsApi {
 	}
 
 	@Override
-	public void DeletReaderByID(long id) throws Exception {
+	public void deletReaderByID(long id) throws Exception {
 		Reader reader = new Reader();
 		reader = readerService.findReaderByUsingId(id);
+		System.out.println(reader.toString());
 		readerService.deletReader(reader);
+
+	}
+
+	@Override
+	public void updateReaderById(long id, String name) throws Exception {
+		//Reader reader = new Reader();
+		Reader reader = readerService.findReaderByUsingId(id);
+		if (reader!= null) {
+			reader.setRegistrationDate(new Date());
+			reader.setReaderName(name);
+			readerService.addOrEditReader(reader);
+			
+		}
 
 	}
 
